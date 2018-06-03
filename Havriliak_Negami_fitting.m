@@ -28,7 +28,7 @@ eps_end=size(All_data, 2);
 
 % In case of 3 peaks
 if peak==3
-ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))+abs(imag(deps3/(complex(1, ((1*10^tay3)*x*2*pi)^alfa3))^betta3))'); % вид функции (полином всех фиттингов)
+ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))+abs(imag(deps3/(complex(1, ((1*10^tay3)*x*2*pi)^alfa3))^betta3))'); % ГўГЁГ¤ ГґГіГ­ГЄГ¶ГЁГЁ (ГЇГ®Г«ГЁГ­Г®Г¬ ГўГ±ГҐГµ ГґГЁГІГІГЁГ­ГЈГ®Гў)
 xx=2;
 coeff_table(1:12,1)=[0.177212341815809;0.454861730781002;0.392354999514640;0.969043302439048;0.820831659025781;0.700000226327451;0.336345910800798;0.00689361759145735;0.0101876524032858;1.5;-1;-4];
 for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
@@ -44,8 +44,8 @@ Data111=Data1;
 Data111(1)=[];
 figure;
 loglog(Data111, diffur);
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
     [coeff_table(1, xx-1), coeff_table(2, xx-1), coeff_table(3, xx-1),...
@@ -83,7 +83,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -126,8 +126,8 @@ for plot_num=1:2:2*(num_doc_2-num_doc_1+1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -165,7 +165,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -210,8 +210,8 @@ for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
     %Data1=All_data(1:end, (eps_end-(plot_num+2)+1));
     Data1=All_data(1:end, (eps_end-(plot_num+1)+1));
     Data3=All_data(1:end, (eps_end-(plot_num)+1));
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
     [average_coeff(1, xx), average_coeff(2, xx), average_coeff(3, xx),...
     average_coeff(4, xx), average_coeff(5, xx), average_coeff(6, xx),...
@@ -243,7 +243,7 @@ end
 coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -274,7 +274,7 @@ end
 end
 %In case of 2 peaks
 if peak==2
-    ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))'); % вид функции (полином всех фиттингов)
+    ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))'); % ГўГЁГ¤ ГґГіГ­ГЄГ¶ГЁГЁ (ГЇГ®Г«ГЁГ­Г®Г¬ ГўГ±ГҐГµ ГґГЁГІГІГЁГ­ГЈГ®Гў)
 
 xx=2;
 %coeff_table=zeros(numcoeffs(ftype), eps_end/2);
@@ -288,8 +288,8 @@ for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -325,7 +325,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -356,8 +356,8 @@ for plot_num=1:2:2*(num_doc_2-num_doc_1+1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -394,7 +394,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -433,8 +433,8 @@ for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -471,7 +471,7 @@ end
 coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -497,7 +497,7 @@ end
 end
 % Incase of 2 peaks and conduction
 if peak==4
-ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))+imag(complex(1, (vsigma/(8.85e-12*x))))'); % вид функции (полином всех фиттингов)
+ftype = fittype('abs(imag(deps1/(complex(1, ((1*10^tay1)*x*2*pi)^alfa1))^betta1))+abs(imag(deps2/(complex(1, ((1*10^tay2)*x*2*pi)^alfa2))^betta2))+imag(complex(1, (vsigma/(8.85e-12*x))))'); % ГўГЁГ¤ ГґГіГ­ГЄГ¶ГЁГЁ (ГЇГ®Г«ГЁГ­Г®Г¬ ГўГ±ГҐГµ ГґГЁГІГІГЁГ­ГЈГ®Гў)
 xx=2;
 coeff_table(1:9,1)=[0.454861730781002;0.392354999514640;0.820831659025781;0.700000226327451;0.00719361759145735;0.0121876524032858;-1;-9; 8e-15];
 for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
@@ -508,8 +508,8 @@ for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
     %Data_examples(:, xx-1)=Data3(:,1);
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -544,7 +544,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 loglog(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -586,8 +586,8 @@ for plot_num=1:2:2*(num_doc_2-num_doc_1+1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -627,7 +627,7 @@ end
 %coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
@@ -673,8 +673,8 @@ for plot_num=(num_doc_1*2-1):2:(num_doc_2*2-1)
     
 
 
-% ncoeffs = numcoeffs(ftype) % если надо узнать число коэффициентов в ф-ци
-% coeffs = coeffnames(ftype) % если надо узнать имена коэффициентов в ф-ци
+% ncoeffs = numcoeffs(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј Г·ГЁГ±Г«Г® ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
+% coeffs = coeffnames(ftype) % ГҐГ±Г«ГЁ Г­Г Г¤Г® ГіГ§Г­Г ГІГј ГЁГ¬ГҐГ­Г  ГЄГ®ГЅГґГґГЁГ¶ГЁГҐГ­ГІГ®Гў Гў Гґ-Г¶ГЁ
 
     
 [f, l ,k]=fit(Data1,Data3,ftype, 'StartPoint',...
@@ -713,7 +713,7 @@ end
 coeff_table(numcoeffs(ftype)+1, xx)=doc_num-num_doc_1-(xx-2)+1;
 figure('Color','w');
     
-set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %формат подписей осей
+set(0,'DefaultAxesFontSize',12,'DefaultAxesFontName','Arilal Black');  %ГґГ®Г°Г¬Г ГІ ГЇГ®Г¤ГЇГЁГ±ГҐГ© Г®Г±ГҐГ©
 set(0,'DefaultTextFontSize',12,'DefaultTextFontName','Arilal Black'); 
 semilogx(Data1, Data3, 'ko', Data1, Fit_plot);
 xlim([10^-1,10^6]);
