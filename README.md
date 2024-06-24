@@ -2,7 +2,6 @@
 Raw program for fitting dielectric spectroscopy by Havriliak-Negami function based on the Debye model
 The program for MATLAB is used for fitting dielectric spectroscopy of polymers in the frequency domain. 
 It consists of several files, the main one of which is called Havriliak_Negami_fitting.m
-On all questions you can contact me on e-mail: nefaeron@gmail.com
 So far, it is difficult to understand and it is very inefficient, because I did not have time to create it at all. 
 The basic fitting parameters are the numbers in the array "coeff_table", in case of three peaks:
 alfa1 =coeffvals1(1);
